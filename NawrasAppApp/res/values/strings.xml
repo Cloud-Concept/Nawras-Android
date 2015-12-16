@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_type">com.cloudconcept.login</string>
+	<string name="app_name"><b>NawrasApp</b></string>
+	<string name="app_package">com.cloudconcept</string>
+    <string name="welcome">Welcome %s</string>
+	<string name="logout_button">Logout</string>
+	<string name="fetch_contacts_button">Fetch Contacts</string>
+	<string name="fetch_accounts_button">Fetch Accounts</string>
+	<string name="clear_button">Clear</string>
+
+	<string-array name="drawer_list">
+		<item>Home</item>
+		<item>Dealers</item>
+		<item>Call Reports</item>
+		<item>Products</item>
+		<item>Samples</item>
+		<item>Promotional Items</item>
+		<item>Sync</item>
+		<item>About</item>
+	</string-array>
+</resources>

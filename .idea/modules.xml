@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cordova/Cordova.iml" filepath="$PROJECT_DIR$/Cordova/Cordova.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NawrasAppApp/NawrasAppApp.iml" filepath="$PROJECT_DIR$/NawrasAppApp/NawrasAppApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NawrasWorkspace.iml" filepath="$PROJECT_DIR$/NawrasWorkspace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SalesforceSDK/SalesforceSDK.iml" filepath="$PROJECT_DIR$/SalesforceSDK/SalesforceSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartStore/SmartStore.iml" filepath="$PROJECT_DIR$/SmartStore/SmartStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartSync/SmartSync.iml" filepath="$PROJECT_DIR$/SmartSync/SmartSync.iml" />
+    </modules>
+  </component>
+</project>

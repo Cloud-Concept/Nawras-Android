@@ -1,0 +1,5 @@
+include ':SmartSync'
+include ':Cordova'
+include ':SmartStore'
+include ':SalesforceSDK'
+include ':NawrasAppApp'
