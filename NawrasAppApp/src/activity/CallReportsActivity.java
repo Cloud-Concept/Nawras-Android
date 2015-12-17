@@ -2,6 +2,7 @@ package activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.View;
 
 import com.cloudconcept.BaseActivity;
 
@@ -30,5 +31,15 @@ public class CallReportsActivity extends BaseActivity {
     @Override
     public String GetHeaderTitle() {
         return TitleConstants.CALL_REPORTS_TITLE;
+    }
+
+    @Override
+    public int GetCalendarVisibillity() {
+        return View.GONE;
+    }
+
+    @Override
+    public int GetAddVisibillity() {
+        return View.VISIBLE;
     }
 }

@@ -21,22 +21,33 @@ import com.salesforce.androidsdk.ui.sfnative.SalesforceActivity;
 
 import java.util.ArrayList;
 
+import activity.AboutActivity;
+import activity.CallReportsActivity;
+import activity.DealersActivity;
+import activity.HomeActivity;
+import activity.ProductsActivity;
+import activity.PromotionalItemsActivity;
+import activity.SamplesActivity;
+import activity.StockActivity;
+import activity.SyncActivity;
 import adapter.NavDrawerListAdapter;
 import model.NavDrawerItem;
 import utilities.ExceptionHandler;
+import utilities.LayoutResource;
 
 /**
- * Created by Abanoub on 6/22/2015.
+ * Created by Abanoub Wagdy on 6/22/2015.
  */
 
 public abstract class BaseActivity extends SalesforceActivity {
 
     private FragmentManager fragmentManager;
-    private ImageView imageMenu;
+    private ImageView imageMenu, imageCalendar, imageAdd;
     private Button btnMenuTransparent;
     private TextView tvTitle;
     private DrawerLayout drawerLayout;
     protected static RestClient client;
+    Activity activity;
 
 //    private View.OnClickListener listenerOk1 = new View.OnClickListener() {
 //
@@ -51,14 +62,17 @@ public abstract class BaseActivity extends SalesforceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
-        setContentView(R.layout.base);
+        setContentView(LayoutResource.getBaseLayout());
         InitializeViews();
     }
 
     private void InitializeViews() {
         tvTitle = (TextView) findViewById(R.id.tvTitle);
+        imageCalendar = (ImageView) findViewById(R.id.imageCalendar);
+        imageAdd = (ImageView) findViewById(R.id.imageAdd);
 //        btnLogout = (Button) findViewById(R.id.btnLogout);
 //        btnLogout.setOnClickListener(listenerOk1);
+        activity = this;
         btnMenuTransparent = (Button) findViewById(R.id.btnMenuTransparent);
         imageMenu = (ImageView) findViewById(R.id.imageMenu);
         imageMenu.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +101,7 @@ public abstract class BaseActivity extends SalesforceActivity {
         ListView list = (ListView) findViewById(R.id.left_drawer);
         ArrayList<NavDrawerItem> _drawerItems = new ArrayList<NavDrawerItem>();
         String[] TITLES = getResources().getStringArray(R.array.drawer_list);
-        int[] Icons = new int[]{R.mipmap.home, R.mipmap.dealers, R.mipmap.call_reports, R.mipmap.products, R.mipmap.samples, R.mipmap.promotional_items, R.mipmap.sync, R.mipmap.about};
+        int[] Icons = new int[]{R.mipmap.home, R.mipmap.dealers, R.mipmap.call_reports, R.mipmap.stocks, R.mipmap.products, R.mipmap.samples, R.mipmap.promotional_items, R.mipmap.sync, R.mipmap.about};
         for (int i = 0; i < TITLES.length; i++) {
             NavDrawerItem _item = new NavDrawerItem();
             _item.setTitle(TITLES[i]);
@@ -105,35 +119,68 @@ public abstract class BaseActivity extends SalesforceActivity {
                 switch (position) {
                     case 0:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        ActivitiesLauncher.openHomeActivity(getApplicationContext());
+                        if (!(activity instanceof HomeActivity)) {
+                            ActivitiesLauncher.openHomeActivity(getApplicationContext());
+                            finish();
+                        }
                         break;
                     case 1:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        ActivitiesLauncher.openDealersActivity(getApplicationContext());
+                        if (!(activity instanceof DealersActivity)) {
+                            ActivitiesLauncher.openDealersActivity(getApplicationContext());
+                            finish();
+                        }
+
                         break;
                     case 2:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        ActivitiesLauncher.openCallReportsActivity(getApplicationContext());
+                        if (!(activity instanceof CallReportsActivity)) {
+                            ActivitiesLauncher.openCallReportsActivity(getApplicationContext());
+                            finish();
+                        }
                         break;
+
                     case 3:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        ActivitiesLauncher.openProductsActivity(getApplicationContext());
+                        if (!(activity instanceof StockActivity)) {
+                            ActivitiesLauncher.openStockActivity(getApplicationContext());
+                            finish();
+                        }
                         break;
                     case 4:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        ActivitiesLauncher.openSamplesActivity(getApplicationContext());
+                        if (!(activity instanceof ProductsActivity)) {
+                            ActivitiesLauncher.openProductsActivity(getApplicationContext());
+                            finish();
+                        }
                         break;
                     case 5:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        ActivitiesLauncher.openPromotionalItemsActivity(getApplicationContext());
+                        if (!(activity instanceof SamplesActivity)) {
+                            ActivitiesLauncher.openSamplesActivity(getApplicationContext());
+                            finish();
+                        }
                         break;
                     case 6:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        ActivitiesLauncher.openSyncActivity(getApplicationContext());
+                        if (!(activity instanceof PromotionalItemsActivity)) {
+                            ActivitiesLauncher.openPromotionalItemsActivity(getApplicationContext());
+                            finish();
+                        }
                         break;
                     case 7:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        ActivitiesLauncher.openAboutActivity(getApplicationContext());
+                        if (!(activity instanceof SyncActivity)) {
+                            ActivitiesLauncher.openSyncActivity(getApplicationContext());
+                            finish();
+                        }
+                        break;
+                    case 8:
+                        drawerLayout.closeDrawer(Gravity.LEFT);
+                        if (!(activity instanceof AboutActivity)) {
+                            ActivitiesLauncher.openAboutActivity(getApplicationContext());
+                            finish();
+                        }
                         break;
                 }
             }
@@ -143,6 +190,20 @@ public abstract class BaseActivity extends SalesforceActivity {
 
         tvTitle.setText(GetHeaderTitle());
         getFragment(GetFragment());
+        if (GetAddVisibillity() == View.GONE) {
+            imageAdd.setVisibility(View.GONE);
+        } else if (GetAddVisibillity() == View.INVISIBLE) {
+            imageAdd.setVisibility(View.INVISIBLE);
+        } else {
+            imageAdd.setVisibility(View.VISIBLE);
+        }
+        if (GetCalendarVisibillity() == View.GONE) {
+            imageCalendar.setVisibility(View.GONE);
+        } else if (GetCalendarVisibillity() == View.INVISIBLE) {
+            imageCalendar.setVisibility(View.INVISIBLE);
+        } else {
+            imageCalendar.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -160,6 +221,10 @@ public abstract class BaseActivity extends SalesforceActivity {
     public abstract Fragment GetFragment();
 
     public abstract String GetHeaderTitle();
+
+    public abstract int GetCalendarVisibillity();
+
+    public abstract int GetAddVisibillity();
 
     @Override
     public void onBackPressed() {

@@ -12,6 +12,7 @@ import com.cloudconcept.R;
 
 import adapter.MyListAdapter;
 import utilities.LayoutResource;
+import utilities.TitleConstants;
 
 /**
  * Created by Abanoub Wagdy on 12/15/2015.
@@ -32,7 +33,7 @@ public class PromotionalItemsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(LayoutResource.getPromotionsResource(), container, false);
         lstPromotions = (ListView)view.findViewById(R.id.lstPromotions);
-        lstPromotions.setAdapter(new MyListAdapter(promotions,getActivity().getApplicationContext()));
+        lstPromotions.setAdapter(new MyListAdapter(promotions,getActivity().getApplicationContext(), TitleConstants.PROMOTIONAL_ITEMS_TITLE));
         return view;
     }
 }

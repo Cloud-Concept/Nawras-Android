@@ -7,35 +7,47 @@ import com.cloudconcept.R;
  */
 public class LayoutResource {
 
-    public static int getHomeResource(){
+    public static int getHomeResource() {
         return R.layout.home;
     }
 
-    public static int getAboutResource(){
+    public static int getAboutResource() {
         return R.layout.about;
     }
 
-    public static int getDealersResource(){
+    public static int getDealersResource() {
         return R.layout.dealers;
     }
 
-    public static int getPromotionsResource(){
+    public static int getPromotionsResource() {
         return R.layout.promotions;
     }
 
-    public static int getSamplesResource(){
+    public static int getSamplesResource() {
         return R.layout.samples;
     }
 
-    public static int getCallReportsResource(){
+    public static int getCallReportsResource() {
         return R.layout.call_reports;
     }
 
-    public static int getProductsResource(){
+    public static int getProductsResource() {
         return R.layout.products;
     }
 
-    public static int getSyncResource(){
+    public static int getSyncResource() {
         return R.layout.sync;
+    }
+
+    public static int getBaseLayout() {
+        return R.layout.base;
+    }
+
+    public static int getSplashResource() {
+        return R.layout.splash;
+    }
+
+    public static int getStocksResource() {
+        return R.layout.stocks;
     }
 }

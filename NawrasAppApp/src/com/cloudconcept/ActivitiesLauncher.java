@@ -10,6 +10,7 @@ import activity.HomeActivity;
 import activity.ProductsActivity;
 import activity.PromotionalItemsActivity;
 import activity.SamplesActivity;
+import activity.StockActivity;
 import activity.SyncActivity;
 
 
@@ -75,6 +76,13 @@ public class ActivitiesLauncher {
 
     public static void openAboutActivity(Context applicationContext) {
         intent = new Intent(applicationContext, AboutActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        applicationContext.startActivity(intent);
+    }
+
+    public static void openStockActivity(Context applicationContext) {
+        intent = new Intent(applicationContext, StockActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         applicationContext.startActivity(intent);

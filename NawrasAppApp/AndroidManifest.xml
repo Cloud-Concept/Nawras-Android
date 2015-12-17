@@ -79,6 +79,16 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|stateHidden|adjustPan" />
 
+        <activity
+            android:name="activity.StockActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateHidden|adjustPan" />
+
+
+
+
     </application>
 
     <uses-sdk

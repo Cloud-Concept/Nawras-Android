@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import adapter.MyListAdapter;
 import utilities.LayoutResource;
+import utilities.TitleConstants;
 
 /**
  * Created by Abanoub Wagdy on 12/15/2015.
@@ -33,7 +34,7 @@ public class ProductsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(LayoutResource.getProductsResource(), container, false);
         lstProducts = (ListView) view.findViewById(R.id.lstProducts);
-        lstProducts.setAdapter(new MyListAdapter(products, getActivity().getApplicationContext()));
+        lstProducts.setAdapter(new MyListAdapter(products, getActivity().getApplicationContext(), TitleConstants.PRODUCTS_TITLE));
         return view;
     }
 }

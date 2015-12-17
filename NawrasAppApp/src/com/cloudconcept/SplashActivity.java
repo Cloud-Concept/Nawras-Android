@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import activity.HomeActivity;
+import utilities.LayoutResource;
 
 /**
  * Created by Abanoub Wagdy on 12/15/2015.
@@ -18,7 +19,7 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
+        setContentView(LayoutResource.getSplashResource());
 
         new Handler().postDelayed(new Runnable() {
             @Override

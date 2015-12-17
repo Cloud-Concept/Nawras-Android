@@ -28,7 +28,10 @@
 
     <color name="dwc_blue_color">#33CCCC</color>
     <color name="slide_menu_item_background">#23969F</color>
-    <color name="header_background">#23969F</color>
+
+    <color name="header_background">#79a5ac</color>
+    <color name="menu_bg_color">#5a7f85</color>
+    <color name="list_sub_color">#2c8acb</color>
 
     <color name="myDrawerBackground">#F2F2F2</color>
     <color name="myWindowBackground">#DEDEDE</color>
@@ -46,7 +49,6 @@
     <color name="light_grey">#C7C7CC</color>
     <color name="grey">#878787</color>
     <color name="white_green">#F1F4F4</color>
-    <color name="header_background2">#EAECEB</color>
     <color name="noc_grey">#C5C5C5</color>
     <color name="noc_blue">#1914B9</color>
     <color name="noc_top_background">#D6E1E8</color>
