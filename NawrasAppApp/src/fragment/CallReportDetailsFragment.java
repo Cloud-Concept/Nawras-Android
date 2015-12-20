@@ -75,10 +75,13 @@ public class CallReportDetailsFragment extends Fragment implements View.OnClickL
             ActivitiesLauncher.openPromotionalItemsActivity(getActivity().getApplicationContext(), 2);
 
         } else if (v == relativeSamples) {
+
             ActivitiesLauncher.openSamplesActivity(getActivity().getApplicationContext(), 2);
 
         } else if (v == relativeStocks) {
+
             ActivitiesLauncher.openStockActivity(getActivity().getApplicationContext(), 2);
+
         } else if (v == relativeObjectives) {
 
             ActivitiesLauncher.openObjectivesActivity(getActivity().getApplicationContext());

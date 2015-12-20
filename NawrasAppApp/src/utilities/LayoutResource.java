@@ -56,7 +56,6 @@ public class LayoutResource {
     }
 
     public static int getObjectivesResource() {
-
         return R.layout.objectives;
     }
 }
