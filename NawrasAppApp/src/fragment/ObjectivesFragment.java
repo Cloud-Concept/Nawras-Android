@@ -20,7 +20,7 @@ import utilities.LayoutResource;
 public class ObjectivesFragment extends Fragment implements View.OnClickListener {
 
     TextView tvQuestion1, tvQuestion2, tvQuestion3;
-    EditText etResult1, etResult2, etResult3;
+    EditText  etResult2;
     EditText etRemarks1, etRemarks2, etRemarks3;
     String[] Questions = new String[]{"BRIEF TRAIN THE DEALER ON THE NEW RECHARGE WIN PROMOTION", "REINFORCE THE MOUSBAK PLAN PROMOTION", "CHECK COLLECT PENDING USSD FORMS"};
     Button btnSave;
@@ -43,9 +43,9 @@ public class ObjectivesFragment extends Fragment implements View.OnClickListener
         tvQuestion2.setText(Questions[1]);
         tvQuestion3.setText(Questions[2]);
 
-        etResult1 = (EditText) view.findViewById(R.id.etResult1);
+//        etResult1 = (EditText) view.findViewById(R.id.etResult1);
         etResult2 = (EditText) view.findViewById(R.id.etResult2);
-        etResult3 = (EditText) view.findViewById(R.id.etResult3);
+//        etResult3 = (EditText) view.findViewById(R.id.etResult3);
 
         etRemarks1 = (EditText) view.findViewById(R.id.etRemarks1);
         etRemarks2 = (EditText) view.findViewById(R.id.etRemarks2);

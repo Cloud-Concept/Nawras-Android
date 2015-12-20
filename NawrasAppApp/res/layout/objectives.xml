@@ -26,11 +26,22 @@
             android:layout_marginTop="10dp"
             android:textColor="@color/black" />
 
-        <EditText
-            android:id="@+id/etResult1"
+        <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Result" />
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Done"/>
+
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Not Done"/>
+
+        </RadioGroup>
 
         <EditText
             android:id="@+id/etRemarks1"
@@ -63,12 +74,6 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/etResult3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Result" />
 
         <EditText
             android:id="@+id/etRemarks3"
