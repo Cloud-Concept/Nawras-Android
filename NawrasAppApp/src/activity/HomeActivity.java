@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.cloudconcept.BaseActivity;
 
+import fragment.CallReportsFragment;
 import fragment.HomeFragment;
 import utilities.ExceptionHandler;
 import utilities.TitleConstants;
@@ -23,7 +24,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public Fragment GetFragment() {
-        Fragment fragment = HomeFragment.newInstance();
+        Fragment fragment = CallReportsFragment.newInstance();
         return fragment;
     }
 
@@ -40,5 +41,15 @@ public class HomeActivity extends BaseActivity {
     @Override
     public int GetAddVisibillity() {
         return View.GONE;
+    }
+
+    @Override
+    public int GetBackVisibillity() {
+        return View.GONE;
+    }
+
+    @Override
+    public int GetMenuVisibillity() {
+        return View.VISIBLE;
     }
 }

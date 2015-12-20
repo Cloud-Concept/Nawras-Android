@@ -8,12 +8,28 @@
 	<string name="fetch_contacts_button">Fetch Contacts</string>
 	<string name="fetch_accounts_button">Fetch Accounts</string>
 	<string name="clear_button">Clear</string>
+	<string name="cloud_concept_text">Cloud Concept is Salesforce.com’s Platinum Consulting Partner and Registered ISV since 2009. We have the largest team of Salesforce.com certified consultants and developers physically present in the GCC.
+* Salesforce.com Platinum Partner
+* 4.5-star customer rating
+* Salesforce.com Registered ISV
+* Over 250 Sales Cloud, Service Cloud, and Custom Cloud projects across the GCC.
+
+With an average rating of 4.5 out of 5 stars, we are leading providers of salesforce.com professional services in the GCC, including the largest government and quasi-government customers.
+
+"Cloud Concept made a thorough examination of our business and technical needs. Cloud Concept's skills, knowledge, and experience helped accelerate the time to value."
+-- Asim Khattak, Thuraya Telecommunications Company
+
+"Cloud Concept stand head and shoulders above any other vendor we've seen. They have an intimate knowledge of our cloud strategy, and have been able to add significant advice and guidance at every step."
+-- Mohammed Jassem, Ajman Free Zone Authority
+
+"Cloud Concept proved they had the experience, skills, and integration capability to deliver a rapid salesforce.com deployment."
+-- Eman Fawzy, Middle East Smart Cards Company
+</string>
 
 	<string-array name="drawer_list">
 		<item>Home</item>
 		<item>Dealers</item>
 		<item>Call Reports</item>
-		<item>Stocks</item>
 		<item>Products</item>
 		<item>Samples</item>
 		<item>Promotional Items</item>

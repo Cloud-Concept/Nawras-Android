@@ -32,4 +32,24 @@ public class StockActivity extends BaseActivity {
     public int GetAddVisibillity() {
         return View.VISIBLE;
     }
+
+    @Override
+    public int GetBackVisibillity() {
+        if (getIntent().getIntExtra("showmenu", -1) == 2) {
+            return View.VISIBLE;
+        } else {
+            return View.GONE;
+        }
+
+    }
+
+    @Override
+    public int GetMenuVisibillity() {
+
+        if (getIntent().getIntExtra("showmenu", -1) == 1) {
+            return View.VISIBLE;
+        } else {
+            return View.GONE;
+        }
+    }
 }

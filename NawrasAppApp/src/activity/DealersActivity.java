@@ -41,4 +41,14 @@ public class DealersActivity extends BaseActivity {
     public int GetAddVisibillity() {
         return View.GONE;
     }
+
+    @Override
+    public int GetBackVisibillity() {
+        return View.GONE;
+    }
+
+    @Override
+    public int GetMenuVisibillity() {
+        return View.VISIBLE;
+    }
 }

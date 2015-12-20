@@ -19,6 +19,15 @@
             android:layout_marginLeft="10dp"
             android:src="@mipmap/header_slide_menu_icon" />
 
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/back" />
+
         <Button
             android:id="@+id/btnMenuTransparent"
             android:layout_width="wrap_content"

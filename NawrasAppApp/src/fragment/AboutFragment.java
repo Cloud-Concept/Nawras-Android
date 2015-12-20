@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 import com.cloudconcept.R;
 
@@ -15,6 +16,7 @@ import utilities.LayoutResource;
  * Created by Abanoub Wagdy on 12/15/2015.
  */
 public class AboutFragment extends Fragment {
+
 
     public static Fragment newInstance() {
         AboutFragment fragment = new AboutFragment();

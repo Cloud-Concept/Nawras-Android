@@ -50,4 +50,13 @@ public class LayoutResource {
     public static int getStocksResource() {
         return R.layout.stocks;
     }
+
+    public static int getCallReportsDetailsResource() {
+        return R.layout.call_report_details;
+    }
+
+    public static int getObjectivesResource() {
+
+        return R.layout.objectives;
+    }
 }

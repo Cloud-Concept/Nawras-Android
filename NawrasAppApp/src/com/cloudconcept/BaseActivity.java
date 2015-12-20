@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -14,9 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.salesforce.androidsdk.app.SalesforceSDKManager;
 import com.salesforce.androidsdk.rest.RestClient;
-import com.salesforce.androidsdk.smartsync.app.SmartSyncSDKManager;
 import com.salesforce.androidsdk.ui.sfnative.SalesforceActivity;
 
 import java.util.ArrayList;
@@ -28,12 +25,12 @@ import activity.HomeActivity;
 import activity.ProductsActivity;
 import activity.PromotionalItemsActivity;
 import activity.SamplesActivity;
-import activity.StockActivity;
 import activity.SyncActivity;
 import adapter.NavDrawerListAdapter;
 import model.NavDrawerItem;
 import utilities.ExceptionHandler;
 import utilities.LayoutResource;
+import utilities.Utilities;
 
 /**
  * Created by Abanoub Wagdy on 6/22/2015.
@@ -42,7 +39,7 @@ import utilities.LayoutResource;
 public abstract class BaseActivity extends SalesforceActivity {
 
     private FragmentManager fragmentManager;
-    private ImageView imageMenu, imageCalendar, imageAdd;
+    private ImageView imageMenu, imageCalendar, imageAdd, imageBack;
     private Button btnMenuTransparent;
     private TextView tvTitle;
     private DrawerLayout drawerLayout;
@@ -70,49 +67,24 @@ public abstract class BaseActivity extends SalesforceActivity {
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         imageCalendar = (ImageView) findViewById(R.id.imageCalendar);
         imageAdd = (ImageView) findViewById(R.id.imageAdd);
+        imageBack = (ImageView) findViewById(R.id.imageBack);
+
 //        btnLogout = (Button) findViewById(R.id.btnLogout);
 //        btnLogout.setOnClickListener(listenerOk1);
         activity = this;
         btnMenuTransparent = (Button) findViewById(R.id.btnMenuTransparent);
         imageMenu = (ImageView) findViewById(R.id.imageMenu);
-        imageMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                    drawerLayout.openDrawer(Gravity.LEFT);
-                } else {
-                    drawerLayout.closeDrawer(Gravity.LEFT);
-                }
-            }
-        });
-
-        btnMenuTransparent.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                    drawerLayout.openDrawer(Gravity.LEFT);
-                } else {
-                    drawerLayout.closeDrawer(Gravity.LEFT);
-                }
-            }
-        });
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ListView list = (ListView) findViewById(R.id.left_drawer);
         ArrayList<NavDrawerItem> _drawerItems = new ArrayList<NavDrawerItem>();
         String[] TITLES = getResources().getStringArray(R.array.drawer_list);
-        int[] Icons = new int[]{R.mipmap.home, R.mipmap.dealers, R.mipmap.call_reports, R.mipmap.stocks, R.mipmap.products, R.mipmap.samples, R.mipmap.promotional_items, R.mipmap.sync, R.mipmap.about};
+        int[] Icons = new int[]{R.mipmap.home, R.mipmap.dealers, R.mipmap.call_reports, R.mipmap.products, R.mipmap.samples, R.mipmap.promotional_items, R.mipmap.sync, R.mipmap.about};
         for (int i = 0; i < TITLES.length; i++) {
             NavDrawerItem _item = new NavDrawerItem();
             _item.setTitle(TITLES[i]);
             _item.setIcon(Icons[i]);
             _drawerItems.add(_item);
         }
-
-//        LayoutInflater mInflater = (LayoutInflater)
-//                getApplicationContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-//        View v = mInflater.inflate(R.layout.header, null);
-//        list.addHeaderView(v);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -142,40 +114,33 @@ public abstract class BaseActivity extends SalesforceActivity {
 
                     case 3:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        if (!(activity instanceof StockActivity)) {
-                            ActivitiesLauncher.openStockActivity(getApplicationContext());
+                        if (!(activity instanceof ProductsActivity)) {
+                            ActivitiesLauncher.openProductsActivity(getApplicationContext(), 1);
                             finish();
                         }
                         break;
                     case 4:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        if (!(activity instanceof ProductsActivity)) {
-                            ActivitiesLauncher.openProductsActivity(getApplicationContext());
+                        if (!(activity instanceof SamplesActivity)) {
+                            ActivitiesLauncher.openSamplesActivity(getApplicationContext(), 1);
                             finish();
                         }
                         break;
                     case 5:
                         drawerLayout.closeDrawer(Gravity.LEFT);
-                        if (!(activity instanceof SamplesActivity)) {
-                            ActivitiesLauncher.openSamplesActivity(getApplicationContext());
+                        if (!(activity instanceof PromotionalItemsActivity)) {
+                            ActivitiesLauncher.openPromotionalItemsActivity(getApplicationContext(), 1);
                             finish();
                         }
                         break;
                     case 6:
-                        drawerLayout.closeDrawer(Gravity.LEFT);
-                        if (!(activity instanceof PromotionalItemsActivity)) {
-                            ActivitiesLauncher.openPromotionalItemsActivity(getApplicationContext());
-                            finish();
-                        }
-                        break;
-                    case 7:
                         drawerLayout.closeDrawer(Gravity.LEFT);
                         if (!(activity instanceof SyncActivity)) {
                             ActivitiesLauncher.openSyncActivity(getApplicationContext());
                             finish();
                         }
                         break;
-                    case 8:
+                    case 7:
                         drawerLayout.closeDrawer(Gravity.LEFT);
                         if (!(activity instanceof AboutActivity)) {
                             ActivitiesLauncher.openAboutActivity(getApplicationContext());
@@ -196,13 +161,72 @@ public abstract class BaseActivity extends SalesforceActivity {
             imageAdd.setVisibility(View.INVISIBLE);
         } else {
             imageAdd.setVisibility(View.VISIBLE);
+            imageAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Utilities.showLongToast(BaseActivity.this, "Add Item");
+                }
+            });
         }
+
+        if (GetBackVisibillity() == View.GONE) {
+            imageBack.setVisibility(View.GONE);
+        } else if (GetBackVisibillity() == View.INVISIBLE) {
+            imageBack.setVisibility(View.INVISIBLE);
+        } else {
+            imageBack.setVisibility(View.VISIBLE);
+            imageBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
+
+        if (GetMenuVisibillity() == View.GONE) {
+            imageMenu.setVisibility(View.GONE);
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        } else if (GetBackVisibillity() == View.INVISIBLE) {
+            imageMenu.setVisibility(View.INVISIBLE);
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        } else {
+            imageMenu.setVisibility(View.VISIBLE);
+            imageMenu.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                        drawerLayout.openDrawer(Gravity.LEFT);
+                    } else {
+                        drawerLayout.closeDrawer(Gravity.LEFT);
+                    }
+                }
+            });
+
+            btnMenuTransparent.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                        drawerLayout.openDrawer(Gravity.LEFT);
+                    } else {
+                        drawerLayout.closeDrawer(Gravity.LEFT);
+                    }
+                }
+            });
+        }
+
         if (GetCalendarVisibillity() == View.GONE) {
             imageCalendar.setVisibility(View.GONE);
         } else if (GetCalendarVisibillity() == View.INVISIBLE) {
             imageCalendar.setVisibility(View.INVISIBLE);
         } else {
             imageCalendar.setVisibility(View.VISIBLE);
+            imageCalendar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Utilities.showLongToast(BaseActivity.this, "Calendar");
+                }
+            });
         }
     }
 
@@ -225,6 +249,10 @@ public abstract class BaseActivity extends SalesforceActivity {
     public abstract int GetCalendarVisibillity();
 
     public abstract int GetAddVisibillity();
+
+    public abstract int GetBackVisibillity();
+
+    public abstract int GetMenuVisibillity();
 
     @Override
     public void onBackPressed() {

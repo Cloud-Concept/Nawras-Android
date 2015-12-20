@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 
 import activity.AboutActivity;
+import activity.CallReportDetailsActivity;
 import activity.CallReportsActivity;
 import activity.DealersActivity;
 import activity.HomeActivity;
+import activity.ObjectivesActivity;
 import activity.ProductsActivity;
 import activity.PromotionalItemsActivity;
 import activity.SamplesActivity;
@@ -46,24 +48,27 @@ public class ActivitiesLauncher {
         applicationContext.startActivity(intent);
     }
 
-    public static void openProductsActivity(Context applicationContext) {
+    public static void openProductsActivity(Context applicationContext, int i) {
         intent = new Intent(applicationContext, ProductsActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("showmenu", i);
         applicationContext.startActivity(intent);
     }
 
-    public static void openSamplesActivity(Context applicationContext) {
+    public static void openSamplesActivity(Context applicationContext, int i) {
         intent = new Intent(applicationContext, SamplesActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("showmenu", i);
         applicationContext.startActivity(intent);
     }
 
-    public static void openPromotionalItemsActivity(Context applicationContext) {
+    public static void openPromotionalItemsActivity(Context applicationContext, int i) {
         intent = new Intent(applicationContext, PromotionalItemsActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("showmenu", i);
         applicationContext.startActivity(intent);
     }
 
@@ -81,10 +86,27 @@ public class ActivitiesLauncher {
         applicationContext.startActivity(intent);
     }
 
-    public static void openStockActivity(Context applicationContext) {
+    public static void openStockActivity(Context applicationContext, int i) {
         intent = new Intent(applicationContext, StockActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("showmenu", i);
         applicationContext.startActivity(intent);
+    }
+
+    public static void openCallReportDetailsActivity(Context applicationContext, String s) {
+        intent = new Intent(applicationContext, CallReportDetailsActivity.class);
+        intent.putExtra("item", s);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        applicationContext.startActivity(intent);
+    }
+
+    public static void openObjectivesActivity(Context applicationContext) {
+        intent = new Intent(applicationContext, ObjectivesActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        applicationContext.startActivity(intent);
+
     }
 }

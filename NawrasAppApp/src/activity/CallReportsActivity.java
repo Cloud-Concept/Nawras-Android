@@ -42,4 +42,14 @@ public class CallReportsActivity extends BaseActivity {
     public int GetAddVisibillity() {
         return View.VISIBLE;
     }
+
+    @Override
+    public int GetBackVisibillity() {
+        return View.GONE;
+    }
+
+    @Override
+    public int GetMenuVisibillity() {
+        return View.VISIBLE;
+    }
 }
