@@ -9,64 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeb7a7c3-ba99-4771-bf66-b5833662fc7b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/res/mipmap/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/call_report_details.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/objectives.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/scheduled_visit_list_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/CallReportDetailsActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/ObjectivesActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/src/adapter/ScheduledVisitsAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/CallReportDetailsFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/ObjectivesFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/src/model/Visit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NawrasAppApp/src/utilities/Utilities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/mipmap/right_arrow.png" afterPath="$PROJECT_DIR$/NawrasAppApp/res/mipmap/right_arrow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/AndroidManifest.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/about.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/base.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/base.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/call_reports.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/call_reports.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/dealers.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/dealers.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/home.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/home.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/item_list.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/item_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/item_row.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/item_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/products.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/products.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/promotions.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/promotions.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/samples.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/samples.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/splash.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/splash.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/stocks.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/stocks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/layout/sync.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/layout/sync.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/values/colors.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/values/strings.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/res/values/styles.xml" afterPath="$PROJECT_DIR$/NawrasAppApp/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/AboutActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/AboutActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/CallReportsActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/CallReportsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/DealersActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/DealersActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/HomeActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/HomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/ProductsActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/ProductsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/PromotionalItemsActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/PromotionalItemsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/SamplesActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/SamplesActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/StockActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/StockActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/activity/SyncActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/activity/SyncActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/adapter/MyListAdapter.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/adapter/MyListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/adapter/NavDrawerListAdapter.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/adapter/NavDrawerListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/com/cloudconcept/ActivitiesLauncher.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/com/cloudconcept/ActivitiesLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/com/cloudconcept/BaseActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/com/cloudconcept/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/com/cloudconcept/SplashActivity.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/com/cloudconcept/SplashActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/AboutFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/AboutFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/CallReportsFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/CallReportsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/DealersFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/DealersFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/HomeFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/HomeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/ProductsFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/ProductsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/PromotionalItemsFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/PromotionalItemsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/SamplesFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/SamplesFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/StocksFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/StocksFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/fragment/SyncFragment.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/fragment/SyncFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/model/NavDrawerItem.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/model/NavDrawerItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/utilities/LayoutResource.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/utilities/LayoutResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NawrasAppApp/src/utilities/TitleConstants.java" afterPath="$PROJECT_DIR$/NawrasAppApp/src/utilities/TitleConstants.java" />
-    </list>
+    <list default="true" id="eeb7a7c3-ba99-4771-bf66-b5833662fc7b" name="Default" comment="" />
     <ignored path="Nawras-Android.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
