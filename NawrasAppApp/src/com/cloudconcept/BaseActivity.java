@@ -1,7 +1,11 @@
 package com.cloudconcept;
 
 import android.app.Activity;
+import android.content.ContentUris;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -27,6 +31,7 @@ import activity.PromotionalItemsActivity;
 import activity.SamplesActivity;
 import activity.SyncActivity;
 import adapter.NavDrawerListAdapter;
+import custom.BadgeButton;
 import model.NavDrawerItem;
 import utilities.ExceptionHandler;
 import utilities.LayoutResource;
@@ -38,12 +43,13 @@ import utilities.Utilities;
 
 public abstract class BaseActivity extends SalesforceActivity {
 
-    private FragmentManager fragmentManager;
-    private ImageView imageMenu, imageCalendar, imageAdd, imageBack;
-    private Button btnMenuTransparent;
-    private TextView tvTitle;
-    private DrawerLayout drawerLayout;
-    protected static RestClient client;
+    public FragmentManager fragmentManager;
+    public ImageView imageMenu, imageAdd, imageBack;
+    BadgeButton imageCalendar;
+    public Button btnMenuTransparent;
+    public TextView tvTitle;
+    public DrawerLayout drawerLayout;
+    public static RestClient client;
     Activity activity;
 
 //    private View.OnClickListener listenerOk1 = new View.OnClickListener() {
@@ -65,9 +71,17 @@ public abstract class BaseActivity extends SalesforceActivity {
 
     private void InitializeViews() {
         tvTitle = (TextView) findViewById(R.id.tvTitle);
-        imageCalendar = (ImageView) findViewById(R.id.imageCalendar);
+        imageCalendar = (BadgeButton) findViewById(R.id.imageCalendar);
         imageAdd = (ImageView) findViewById(R.id.imageAdd);
         imageBack = (ImageView) findViewById(R.id.imageBack);
+
+        imageCalendar.setBadgeDrawable(getResources().getDrawable(
+                R.mipmap.notification_image3));
+
+        imageCalendar.setBadgeText("3" + "");
+        imageCalendar.showBadge();
+
+
 
 //        btnLogout = (Button) findViewById(R.id.btnLogout);
 //        btnLogout.setOnClickListener(listenerOk1);
@@ -224,7 +238,17 @@ public abstract class BaseActivity extends SalesforceActivity {
             imageCalendar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Utilities.showLongToast(BaseActivity.this, "Calendar");
+//                    Intent intent = new Intent(Intent.ACTION_EDIT);
+//                    intent.setType("vnd.android.cursor.item/event");
+//                    intent.putExtra("title", "Some title");
+//                    intent.putExtra("description", "Some description");
+//                    startActivity(intent);
+                    long startMillis = System.currentTimeMillis();
+                    Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();
+                    builder.appendPath("time");
+                    ContentUris.appendId(builder, startMillis);
+                    Intent intent = new Intent(Intent.ACTION_VIEW).setData(builder.build());
+                    startActivity(intent);
                 }
             });
         }

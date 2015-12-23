@@ -19,7 +19,10 @@ import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.cloudconcept.R;
 
+import java.util.ArrayList;
+
 import adapter.MyListAdapter;
+import model.GenericItem;
 import utilities.LayoutResource;
 import utilities.TitleConstants;
 
@@ -29,7 +32,8 @@ import utilities.TitleConstants;
 public class DealersFragment extends Fragment {
 
     SwipeMenuListView lstDealers;
-    String[] items = new String[]{"Al-Sharara Electronics", "Basma Al Kawn Trading"};
+    String[] items2 = new String[]{"Al-Sharara Electronics", "Basma Al Kawn Trading"};
+    ArrayList<GenericItem> items;
 
     public static Fragment newInstance() {
         DealersFragment fragment = new DealersFragment();
@@ -41,6 +45,13 @@ public class DealersFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(LayoutResource.getDealersResource(), container, false);
         lstDealers = (SwipeMenuListView) view.findViewById(R.id.lstDealers);
+        lstDealers.setSwipeDirection(SwipeMenuListView.DIRECTION_RIGHT);
+        items = new ArrayList<>();
+        for (int i=0;i<items2.length;i++){
+            GenericItem item = new GenericItem();
+            item.setProductName(items2[i]);
+            items.add(item);
+        }
 
         SwipeMenuCreator creator = new SwipeMenuCreator() {
 
@@ -88,7 +99,7 @@ public class DealersFragment extends Fragment {
                 return false;
             }
         });
-        lstDealers.setSwipeDirection(SwipeMenuListView.DIRECTION_LEFT);
+
         lstDealers.setAdapter(new MyListAdapter(items, getActivity().getApplicationContext(), TitleConstants.DEALERS_TITLE));
         lstDealers.setOnSwipeListener(new SwipeMenuListView.OnSwipeListener() {
             @Override

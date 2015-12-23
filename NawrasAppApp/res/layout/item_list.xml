@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/tvTitleList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/imageRow"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvSubTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/tvTitleList"
-        android:layout_below="@+id/tvTitleList"
-        android:layout_marginTop="7dp"
-        android:text="ddew"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/list_sub_color" />
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageRow"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:id="@+id/imageRow"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/tvTitleList"
-        android:layout_marginLeft="10dp"
         android:background="@mipmap/products" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvTitleList"
+        android:layout_marginLeft="10dp"
+        android:text="depodmeo"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageRow" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/list_sub_color"
+        android:id="@+id/tvSubTitle"
+        android:text="djwepodjep"
+        android:layout_below="@+id/tvTitleList"
+        android:layout_alignStart="@+id/tvTitleList" />
 
 </RelativeLayout>

@@ -51,4 +51,5 @@ public class DealersActivity extends BaseActivity {
     public int GetMenuVisibillity() {
         return View.VISIBLE;
     }
+
 }

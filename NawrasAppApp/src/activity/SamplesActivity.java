@@ -61,4 +61,8 @@ public class SamplesActivity extends BaseActivity {
             return View.GONE;
         }
     }
+
+    public View GetAddControl() {
+        return imageAdd;
+    }
 }

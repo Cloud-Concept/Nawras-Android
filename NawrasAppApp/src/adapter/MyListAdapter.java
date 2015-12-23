@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import com.cloudconcept.R;
 
+import java.util.ArrayList;
+
+import model.GenericItem;
 import utilities.TitleConstants;
 
 /**
@@ -18,11 +21,11 @@ import utilities.TitleConstants;
  */
 public class MyListAdapter extends BaseAdapter {
 
-    private final String[] products;
+    ArrayList<GenericItem> products;
     private final Context context;
     String screenType;
 
-    public MyListAdapter(String[] products, Context context, String screenType) {
+    public MyListAdapter(ArrayList<GenericItem> products, Context context, String screenType) {
         this.products = products;
         this.context = context;
         this.screenType = screenType;
@@ -30,12 +33,12 @@ public class MyListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return products.length;
+        return products.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return products[position];
+        return products.get(position);
     }
 
     @Override
@@ -55,32 +58,44 @@ public class MyListAdapter extends BaseAdapter {
         TextView tvSubTitle = (TextView) convertView.findViewById(R.id.tvSubTitle);
         ImageView imageRow = (ImageView) convertView.findViewById(R.id.imageRow);
 
+        tvTitle.setText(products.get(position).getProductName());
 
         if (screenType.equals(TitleConstants.PRODUCTS_TITLE)) {
 
-            tvTitle.setText("Product Item");
+//            tvTitle.setText("Product Item");
+//            tvTitle.setText(products[position]);
             imageRow.setImageResource(R.mipmap.products);
-            tvSubTitle.setText(products[position]);
+//            tvSubTitle.setText(products.get(position).getQuantity() + " products,   "+products.get(position).getFacing()+"  pieces");
+            tvSubTitle.setText(products.get(position).getQuantity() + " Quantity");
 
         } else if (screenType.equals(TitleConstants.PROMOTIONAL_ITEMS_TITLE)) {
 
-            tvTitle.setText("Promotional Item");
+//            tvTitle.setText("Promotional Item");
+//            imageRow.setImageResource(R.mipmap.promotional_items);
+//            tvSubTitle.setText(products[position]);
+
+//            tvTitle.setText(products[position]);
             imageRow.setImageResource(R.mipmap.promotional_items);
-            tvSubTitle.setText(products[position]);
+//            tvSubTitle.setText(products.get(position).getQuantity() + " items,   " + products.get(position).getFacing() + "  pieces");
+            tvSubTitle.setText(products.get(position).getQuantity() + " Quantity");
 
-        } else if(screenType.equals(TitleConstants.SAMPLES_TITLE)){
+        } else if (screenType.equals(TitleConstants.SAMPLES_TITLE)) {
 
-            tvTitle.setText("Sample Item");
+//            tvTitle.setText("Sample Item");
+//            imageRow.setImageResource(R.mipmap.samples);
+//            tvSubTitle.setText(products[position]);
+
+//            tvTitle.setText(products[position]);
             imageRow.setImageResource(R.mipmap.samples);
-            tvSubTitle.setText(products[position]);
+//            tvSubTitle.setText(products.get(position).getQuantity() + " samples,   " + products.get(position).getFacing() + "  pieces");
+            tvSubTitle.setText(products.get(position).getQuantity() + " Quantity");
 
-        }else if(screenType.equals(TitleConstants.DEALERS_TITLE)){
+        } else if (screenType.equals(TitleConstants.DEALERS_TITLE)) {
 
-            tvTitle.setText(products[position]);
+//            tvTitle.setText(products[position]);
             tvSubTitle.setText("Address : Oman");
 
         }
-
 
         return convertView;
     }

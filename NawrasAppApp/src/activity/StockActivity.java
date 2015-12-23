@@ -2,6 +2,7 @@ package activity;
 
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.cloudconcept.BaseActivity;
 
@@ -51,5 +52,9 @@ public class StockActivity extends BaseActivity {
         } else {
             return View.GONE;
         }
+    }
+
+    public ImageView GetImageAdd(){
+        return imageAdd;
     }
 }

@@ -3,6 +3,7 @@ package activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.cloudconcept.BaseActivity;
 
@@ -61,5 +62,10 @@ public class ProductsActivity extends BaseActivity {
         } else {
             return View.GONE;
         }
+    }
+
+    public ImageView GetAddControl() {
+
+        return imageAdd;
     }
 }

@@ -40,7 +40,7 @@ public class CallReportsActivity extends BaseActivity {
 
     @Override
     public int GetAddVisibillity() {
-        return View.VISIBLE;
+        return View.GONE;
     }
 
     @Override
@@ -52,4 +52,5 @@ public class CallReportsActivity extends BaseActivity {
     public int GetMenuVisibillity() {
         return View.VISIBLE;
     }
+
 }

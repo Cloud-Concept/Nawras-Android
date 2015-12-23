@@ -52,17 +52,20 @@
             android:id="@+id/imageAdd"
             android:layout_marginRight="5dp"
             android:layout_centerVertical="true"
-            android:background="@mipmap/plus"
+            android:background="@mipmap/add_icon"
             android:layout_alignParentEnd="true" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+        <custom.BadgeButton
             android:id="@+id/imageCalendar"
-            android:layout_marginRight="5dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
             android:background="@mipmap/calendar"
-            android:layout_alignParentEnd="true" />
+            android:textColor="@color/white">
+
+        </custom.BadgeButton>
 
         <!--<Button-->
             <!--android:id="@+id/btnLogout"-->
@@ -92,7 +95,7 @@
             android:layout_width="240dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/menu_bg_color"
+            android:background="@color/header_background"
             android:choiceMode="singleChoice" />
 
     </android.support.v4.widget.DrawerLayout>
