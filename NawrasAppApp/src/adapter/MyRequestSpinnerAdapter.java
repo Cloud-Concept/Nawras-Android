@@ -21,19 +21,21 @@ public class MyRequestSpinnerAdapter extends ArrayAdapter<String> {
 
     public MyRequestSpinnerAdapter(Context context, int resource, int textViewResourceId, String[] objects) {
         super(context, resource, textViewResourceId, objects);
-        this.objects=objects;
-        this.context=context;
+        this.objects = objects;
+        this.context = context;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater mInflater = (LayoutInflater)
                     context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflater.inflate(R.layout.myrequest_spinner_item, parent,false);
+            convertView = mInflater.inflate(R.layout.myrequest_spinner_item, parent, false);
         }
 
-        TextView tv = (TextView)convertView;
-        tv.setText(objects[position]);
+        TextView tv = (TextView) convertView;
+        tv.setText(objects[position].length() > 10 ? objects[position].substring(0, 9) + "..." : objects[position]);
+
 
         return convertView;
     }
@@ -43,10 +45,10 @@ public class MyRequestSpinnerAdapter extends ArrayAdapter<String> {
         if (convertView == null) {
             LayoutInflater mInflater = (LayoutInflater)
                     context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflater.inflate(R.layout.myrequest_dropdown_item, parent,false);
+            convertView = mInflater.inflate(R.layout.myrequest_dropdown_item, parent, false);
         }
 
-        TextView tv = (TextView)convertView.findViewById(R.id.spinnertext);
+        TextView tv = (TextView) convertView.findViewById(R.id.spinnertext);
         tv.setText(objects[position]);
 
         return convertView;

@@ -33,6 +33,7 @@ import activity.SyncActivity;
 import adapter.NavDrawerListAdapter;
 import custom.BadgeButton;
 import model.NavDrawerItem;
+import utilities.ActivitiesLauncher;
 import utilities.ExceptionHandler;
 import utilities.LayoutResource;
 import utilities.Utilities;
@@ -129,21 +130,21 @@ public abstract class BaseActivity extends SalesforceActivity {
                     case 3:
                         drawerLayout.closeDrawer(Gravity.LEFT);
                         if (!(activity instanceof ProductsActivity)) {
-                            ActivitiesLauncher.openProductsActivity(getApplicationContext(), 1);
+                            ActivitiesLauncher.openProductsActivity(getApplicationContext(), 1,2);
                             finish();
                         }
                         break;
                     case 4:
                         drawerLayout.closeDrawer(Gravity.LEFT);
                         if (!(activity instanceof SamplesActivity)) {
-                            ActivitiesLauncher.openSamplesActivity(getApplicationContext(), 1);
+                            ActivitiesLauncher.openSamplesActivity(getApplicationContext(), 1,2);
                             finish();
                         }
                         break;
                     case 5:
                         drawerLayout.closeDrawer(Gravity.LEFT);
                         if (!(activity instanceof PromotionalItemsActivity)) {
-                            ActivitiesLauncher.openPromotionalItemsActivity(getApplicationContext(), 1);
+                            ActivitiesLauncher.openPromotionalItemsActivity(getApplicationContext(), 1,2);
                             finish();
                         }
                         break;

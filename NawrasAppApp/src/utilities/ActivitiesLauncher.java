@@ -1,4 +1,4 @@
-package com.cloudconcept;
+package utilities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -48,27 +48,30 @@ public class ActivitiesLauncher {
         applicationContext.startActivity(intent);
     }
 
-    public static void openProductsActivity(Context applicationContext, int i) {
+    public static void openProductsActivity(Context applicationContext, int i,int j) {
         intent = new Intent(applicationContext, ProductsActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("showmenu", i);
+        intent.putExtra("addfunction", j);
         applicationContext.startActivity(intent);
     }
 
-    public static void openSamplesActivity(Context applicationContext, int i) {
+    public static void openSamplesActivity(Context applicationContext, int i,int j) {
         intent = new Intent(applicationContext, SamplesActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("showmenu", i);
+        intent.putExtra("addfunction", j);
         applicationContext.startActivity(intent);
     }
 
-    public static void openPromotionalItemsActivity(Context applicationContext, int i) {
+    public static void openPromotionalItemsActivity(Context applicationContext, int i,int j) {
         intent = new Intent(applicationContext, PromotionalItemsActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("showmenu", i);
+        intent.putExtra("addfunction", j);
         applicationContext.startActivity(intent);
     }
 

@@ -41,7 +41,12 @@ public class ProductsActivity extends BaseActivity {
 
     @Override
     public int GetAddVisibillity() {
-        return View.VISIBLE;
+
+        if (getIntent().getIntExtra("addfunction", -1) == 1) {
+            return View.VISIBLE;
+        } else {
+            return View.GONE;
+        }
     }
 
     @Override
@@ -51,7 +56,6 @@ public class ProductsActivity extends BaseActivity {
         } else {
             return View.GONE;
         }
-
     }
 
     @Override

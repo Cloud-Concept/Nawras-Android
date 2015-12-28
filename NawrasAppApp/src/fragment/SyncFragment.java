@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.cloudconcept.ActivitiesLauncher;
+import utilities.ActivitiesLauncher;
 import com.cloudconcept.R;
 
 import utilities.LayoutResource;

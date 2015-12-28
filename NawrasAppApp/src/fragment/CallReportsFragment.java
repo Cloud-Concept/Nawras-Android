@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.cloudconcept.ActivitiesLauncher;
+import utilities.ActivitiesLauncher;
 import com.cloudconcept.R;
 
 import adapter.ScheduledVisitsAdapter;

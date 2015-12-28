@@ -1,8 +1,10 @@
 package utilities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -30,6 +32,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cloudconcept.R;
 import com.gc.materialdesign.views.Switch;
 import com.google.gson.Gson;
 import com.salesforce.androidsdk.app.SalesforceSDKManager;
@@ -167,7 +170,7 @@ public class Utilities {
         return sdf.format(resultdate);
     }
 
-    public static int dp2px(int dp,Activity activity) {
+    public static int dp2px(int dp, Activity activity) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
                 activity.getResources().getDisplayMetrics());
     }

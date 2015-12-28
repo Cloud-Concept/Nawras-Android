@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.cloudconcept.ActivitiesLauncher;
+import utilities.ActivitiesLauncher;
+
 import com.cloudconcept.R;
 
 import utilities.LayoutResource;
@@ -68,15 +69,15 @@ public class CallReportDetailsFragment extends Fragment implements View.OnClickL
     public void onClick(View v) {
         if (v == relativeProducts) {
 
-            ActivitiesLauncher.openProductsActivity(getActivity().getApplicationContext(), 2);
+            ActivitiesLauncher.openProductsActivity(getActivity().getApplicationContext(), 2, 1);
 
         } else if (v == relativePromotionalItems) {
 
-            ActivitiesLauncher.openPromotionalItemsActivity(getActivity().getApplicationContext(), 2);
+            ActivitiesLauncher.openPromotionalItemsActivity(getActivity().getApplicationContext(), 2, 1);
 
         } else if (v == relativeSamples) {
 
-            ActivitiesLauncher.openSamplesActivity(getActivity().getApplicationContext(), 2);
+            ActivitiesLauncher.openSamplesActivity(getActivity().getApplicationContext(), 2, 1);
 
         } else if (v == relativeStocks) {
 
