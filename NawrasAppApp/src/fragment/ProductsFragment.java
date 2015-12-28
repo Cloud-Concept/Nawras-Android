@@ -190,7 +190,6 @@ public class ProductsFragment extends Fragment {
         View headerView = inflater.inflate(R.layout.header_dialog, null, false);
         alert.setCustomTitle(headerView);
 
-
         alert.show();
     }
 }

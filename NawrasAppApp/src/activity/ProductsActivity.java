@@ -56,7 +56,6 @@ public class ProductsActivity extends BaseActivity {
 
     @Override
     public int GetMenuVisibillity() {
-
         if (getIntent().getIntExtra("showmenu", -1) == 1) {
             return View.VISIBLE;
         } else {
@@ -65,7 +64,6 @@ public class ProductsActivity extends BaseActivity {
     }
 
     public ImageView GetAddControl() {
-
         return imageAdd;
     }
 }
