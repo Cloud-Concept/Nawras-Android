@@ -33,13 +33,13 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Done"/>
+                android:text="Done" />
 
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Not Done"/>
+                android:text="Not Done" />
 
         </RadioGroup>
 

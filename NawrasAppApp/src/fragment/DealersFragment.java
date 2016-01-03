@@ -13,11 +13,11 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.baoyz.swipemenulistview.SwipeMenu;
-import com.baoyz.swipemenulistview.SwipeMenuCreator;
-import com.baoyz.swipemenulistview.SwipeMenuItem;
-import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.cloudconcept.R;
+import com.com.baoyz.swipemenulistview.SwipeMenu;
+import com.com.baoyz.swipemenulistview.SwipeMenuCreator;
+import com.com.baoyz.swipemenulistview.SwipeMenuItem;
+import com.com.baoyz.swipemenulistview.SwipeMenuListView;
 
 import java.util.ArrayList;
 
@@ -43,11 +43,12 @@ public class DealersFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(LayoutResource.getDealersResource(), container, false);
         lstDealers = (SwipeMenuListView) view.findViewById(R.id.lstDealers);
         lstDealers.setSwipeDirection(SwipeMenuListView.DIRECTION_RIGHT);
         items = new ArrayList<>();
-        for (int i=0;i<items2.length;i++){
+        for (int i = 0; i < items2.length; i++) {
             GenericItem item = new GenericItem();
             item.setProductName(items2[i]);
             items.add(item);
@@ -85,33 +86,7 @@ public class DealersFragment extends Fragment {
 
         lstDealers.setMenuCreator(creator);
 
-        lstDealers.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
-                switch (index) {
-                    case 0:
-                        Toast.makeText(getActivity().getApplicationContext(), "Call", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 1:
-                        Toast.makeText(getActivity().getApplicationContext(), "Mail", Toast.LENGTH_LONG).show();
-                        break;
-                }
-                return false;
-            }
-        });
-
         lstDealers.setAdapter(new MyListAdapter(items, getActivity().getApplicationContext(), TitleConstants.DEALERS_TITLE));
-        lstDealers.setOnSwipeListener(new SwipeMenuListView.OnSwipeListener() {
-            @Override
-            public void onSwipeStart(int position) {
-
-            }
-
-            @Override
-            public void onSwipeEnd(int position) {
-
-            }
-        });
 
         lstDealers.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
             @Override
@@ -127,9 +102,9 @@ public class DealersFragment extends Fragment {
                 return false;
             }
         });
+
         return view;
     }
-
 
     private int dp2px(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,

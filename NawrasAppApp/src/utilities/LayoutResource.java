@@ -35,6 +35,10 @@ public class LayoutResource {
         return R.layout.products;
     }
 
+    public static int getProductsWithoutSwipeResource() {
+        return R.layout.products_without_swipe;
+    }
+
     public static int getSyncResource() {
         return R.layout.sync;
     }

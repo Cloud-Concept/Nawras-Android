@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/SalesforceSDK/SalesforceSDK.iml" filepath="$PROJECT_DIR$/SalesforceSDK/SalesforceSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/SmartStore/SmartStore.iml" filepath="$PROJECT_DIR$/SmartStore/SmartStore.iml" />
       <module fileurl="file://$PROJECT_DIR$/SmartSync/SmartSync.iml" filepath="$PROJECT_DIR$/SmartSync/SmartSync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-include ':SmartSync'
+include ':SmartSync', ':library'
 include ':Cordova'
 include ':SmartStore'
 include ':SalesforceSDK'

@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.baoyz.swipemenulistview.SwipeMenuListView
+    <com.com.baoyz.swipemenulistview.SwipeMenuListView
         android:id="@+id/lstDealers"
         android:layout_width="match_parent"
         android:listSelector="@android:color/transparent"

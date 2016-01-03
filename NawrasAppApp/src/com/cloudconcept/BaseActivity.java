@@ -81,11 +81,6 @@ public abstract class BaseActivity extends SalesforceActivity {
 
         imageCalendar.setBadgeText("3" + "");
         imageCalendar.showBadge();
-
-
-
-//        btnLogout = (Button) findViewById(R.id.btnLogout);
-//        btnLogout.setOnClickListener(listenerOk1);
         activity = this;
         btnMenuTransparent = (Button) findViewById(R.id.btnMenuTransparent);
         imageMenu = (ImageView) findViewById(R.id.imageMenu);

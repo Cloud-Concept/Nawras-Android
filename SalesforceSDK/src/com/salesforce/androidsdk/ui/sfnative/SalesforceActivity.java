@@ -47,104 +47,100 @@ import com.salesforce.androidsdk.util.UserSwitchReceiver;
  */
 public abstract class SalesforceActivity extends FragmentActivity {
 
-	private PasscodeManager passcodeManager;
+    private PasscodeManager passcodeManager;
     private UserSwitchReceiver userSwitchReceiver;
 
-	/**
-	 * Method that is called after the activity resumes once we have a RestClient.
-	 *
-	 * @param client RestClient instance.
-	 */
-	public abstract void onResume(RestClient client);
+    /**
+     * Method that is called after the activity resumes once we have a RestClient.
+     *
+     * @param client RestClient instance.
+     */
+    public abstract void onResume(RestClient client);
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		// Gets an instance of the passcode manager.
-		passcodeManager = SalesforceSDKManager.getInstance().getPasscodeManager();
+        // Gets an instance of the passcode manager.
+        passcodeManager = SalesforceSDKManager.getInstance().getPasscodeManager();
         userSwitchReceiver = new ActivityUserSwitchReceiver();
         registerReceiver(userSwitchReceiver, new IntentFilter(UserAccountManager.USER_SWITCH_INTENT_ACTION));
 
-		// Lets observers know that activity creation is complete.
-		EventsObservable.get().notifyEvent(EventType.MainActivityCreateComplete, this);
-	}
+        // Lets observers know that activity creation is complete.
+        EventsObservable.get().notifyEvent(EventType.MainActivityCreateComplete, this);
+    }
 
-	@Override 
-	public void onResume() {
-		super.onResume();
+    @Override
+    public void onResume() {
+        super.onResume();
 
-		// Brings up the passcode screen if needed.
-		if (passcodeManager.onResume(this)) {
+        // Brings up the passcode screen if needed.
+        if (passcodeManager.onResume(this)) {
 
-			// Gets login options.
-			final String accountType = SalesforceSDKManager.getInstance().getAccountType();
-	    	final LoginOptions loginOptions = SalesforceSDKManager.getInstance().getLoginOptions();
+            // Gets login options.
+            final String accountType = SalesforceSDKManager.getInstance().getAccountType();
+            final LoginOptions loginOptions = SalesforceSDKManager.getInstance().getLoginOptions();
 
-			// Gets a rest client.
-			new ClientManager(this, accountType, loginOptions,
-					SalesforceSDKManager.getInstance().shouldLogoutWhenTokenRevoked()).getRestClient(this, new RestClientCallback() {
+            // Gets a rest client.
+            new ClientManager(this, accountType, loginOptions,
+                    SalesforceSDKManager.getInstance().shouldLogoutWhenTokenRevoked()).getRestClient(this, new RestClientCallback() {
 
-				@Override
-				public void authenticatedRestClient(RestClient client) {
-					if (client == null) {
-						SalesforceSDKManager.getInstance().logout(SalesforceActivity.this);
-						return;
-					}
-					onResume(client);
+                @Override
+                public void authenticatedRestClient(RestClient client) {
+                    if (client == null) {
+                        SalesforceSDKManager.getInstance().logout(SalesforceActivity.this);
+                        return;
+                    }
+                    onResume(client);
 
-					// Lets observers know that rendition is complete.
-					EventsObservable.get().notifyEvent(EventType.RenditionComplete);
-				}
-			});
-		}
-	}
+                    // Lets observers know that rendition is complete.
+                    EventsObservable.get().notifyEvent(EventType.RenditionComplete);
+                }
+            });
+        }
+    }
 
-	@Override
-	public void onUserInteraction() {
-		passcodeManager.recordUserInteraction();
-	}
+    @Override
+    public void onUserInteraction() {
+        passcodeManager.recordUserInteraction();
+    }
 
     @Override
     public void onPause() {
         super.onPause();
-    	passcodeManager.onPause(this);
+        passcodeManager.onPause(this);
     }
 
     @Override
     public void onDestroy() {
-    	unregisterReceiver(userSwitchReceiver);
-    	super.onDestroy();
+        unregisterReceiver(userSwitchReceiver);
+        super.onDestroy();
     }
 
     /**
      * Refreshes the client if the user has been switched.
      */
-	protected void refreshIfUserSwitched() {
-		if (passcodeManager.onResume(this)) {
+    protected void refreshIfUserSwitched() {
+        if (passcodeManager.onResume(this)) {
+            final String accountType = SalesforceSDKManager.getInstance().getAccountType();
+            final LoginOptions loginOptions = SalesforceSDKManager.getInstance().getLoginOptions();
+            new ClientManager(this, accountType, loginOptions,
+                    SalesforceSDKManager.getInstance().shouldLogoutWhenTokenRevoked()).getRestClient(this, new RestClientCallback() {
 
-			// Gets login options.
-			final String accountType = SalesforceSDKManager.getInstance().getAccountType();
-	    	final LoginOptions loginOptions = SalesforceSDKManager.getInstance().getLoginOptions();
+                @Override
+                public void authenticatedRestClient(RestClient client) {
+                    if (client == null) {
+                        SalesforceSDKManager.getInstance().logout(SalesforceActivity.this);
+                        return;
+                    }
+                    onResume(client);
 
-			// Gets a rest client.
-			new ClientManager(this, accountType, loginOptions,
-					SalesforceSDKManager.getInstance().shouldLogoutWhenTokenRevoked()).getRestClient(this, new RestClientCallback() {
-
-				@Override
-				public void authenticatedRestClient(RestClient client) {
-					if (client == null) {
-						SalesforceSDKManager.getInstance().logout(SalesforceActivity.this);
-						return;
-					}
-					onResume(client);
-
-					// Lets observers know that rendition is complete.
-					EventsObservable.get().notifyEvent(EventType.RenditionComplete);
-				}
-			});
-		}
-	}
+                    // Lets observers know that rendition is complete.
+                    EventsObservable.get().notifyEvent(EventType.RenditionComplete);
+                }
+            });
+        }
+    }
 
     /**
      * Acts on the user switch event.
@@ -153,9 +149,9 @@ public abstract class SalesforceActivity extends FragmentActivity {
      */
     private class ActivityUserSwitchReceiver extends UserSwitchReceiver {
 
-		@Override
-		protected void onUserSwitch() {
-			refreshIfUserSwitched();
-		}
+        @Override
+        protected void onUserSwitch() {
+            refreshIfUserSwitched();
+        }
     }
 }
